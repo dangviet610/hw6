@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính chu vi và diện tích hình chữ nhật</title>
+</head>
+<body>
+    <h1>Tính toán hình chữ nhật</h1>
+
+    <label for="chieuDai">Chiều dài:</label>
+    <input type="number" id="chieuDai">
+
+    <label for="chieuRong">Chiều rộng:</label>
+    <input type="number" id="chieuRong">
+
+    <button onclick="tinhToan()">KẾT QUẢ</button>
+
+    <p id="ketQua"></p>
+
+    <script>
+        const tinhChuVi = (a, b) => (a + b) * 2;
+        const tinhDienTich = (a, b) => a * b;
+
+        function tinhToan() {
+            const chieuDai = parseFloat(document.getElementById('chieuDai').value);
+            const chieuRong = parseFloat(document.getElementById('chieuRong').value);
+
+            const chuVi = tinhChuVi(chieuDai, chieuRong);
+            const dienTich = tinhDienTich(chieuDai, chieuRong);
+
+            document.getElementById('ketQua').textContent = `Chu vi: ${chuVi} - Diện tích: ${dienTich}`;
+        }
+    </script>
+</body>
+</html>
